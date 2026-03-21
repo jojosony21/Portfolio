@@ -95,7 +95,7 @@ export function ContactSection() {
                         href="mailto:jojosony216@gmail.com"
                         className="text-foreground hover:text-primary transition-colors"
                       >
-                        jojosony@example.com
+                        jojosony216@gmail.com.com
                       </a>
                     </div>
                   </div>
