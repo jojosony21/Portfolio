@@ -17,30 +17,30 @@ export function ProjectsSection() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((project) => (
+            {projects.map((project, index) => (
               <Link
                 key={project.slug}
                 href={`/projects/${project.slug}`}
-                className="block group"
+                className={`block group ${index === 0 ? "md:col-span-2 lg:col-span-3" : ""}`}
               >
-                <Card className="bg-card border-border hover:border-primary/50 transition-all duration-300 overflow-hidden h-full cursor-pointer">
+                <Card className={`bg-card border-border hover:border-primary/50 transition-all duration-300 overflow-hidden h-full cursor-pointer ${index === 0 ? "border-primary/20 shadow-lg" : ""}`}>
                   <CardHeader className="pb-4">
                     <div className="flex items-start justify-between">
-                      <div className="p-2 bg-primary/10 rounded-lg mb-4 group-hover:bg-primary/20 transition-colors">
+                      <div className={`p-2 rounded-lg mb-4 transition-colors ${index === 0 ? "bg-primary/20 group-hover:bg-primary/30" : "bg-primary/10 group-hover:bg-primary/20"}`}>
                         <project.icon className="h-6 w-6 text-primary" />
                       </div>
                       <ChevronRight className="h-5 w-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
                     </div>
-                    <CardTitle className="text-lg text-foreground group-hover:text-primary transition-colors">
+                    <CardTitle className={`text-foreground group-hover:text-primary transition-colors ${index === 0 ? "text-xl md:text-2xl" : "text-lg"}`}>
                       {project.title}
                     </CardTitle>
-                    <CardDescription className="text-muted-foreground leading-relaxed">
+                    <CardDescription className="text-muted-foreground leading-relaxed mt-2">
                       {project.description}
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="pt-0">
                     <div className="flex flex-wrap gap-2">
-                      {project.techStack.slice(0, 4).map((tech) => (
+                      {project.techStack.slice(0, index === 0 ? 8 : 4).map((tech) => (
                         <Badge
                           key={tech}
                           variant="secondary"
@@ -49,12 +49,12 @@ export function ProjectsSection() {
                           {tech}
                         </Badge>
                       ))}
-                      {project.techStack.length > 4 && (
+                      {project.techStack.length > (index === 0 ? 8 : 4) && (
                         <Badge
                           variant="secondary"
                           className="bg-secondary text-muted-foreground border border-border"
                         >
-                          +{project.techStack.length - 4}
+                          +{project.techStack.length - (index === 0 ? 8 : 4)}
                         </Badge>
                       )}
                     </div>

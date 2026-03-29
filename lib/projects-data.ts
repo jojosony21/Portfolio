@@ -1,4 +1,4 @@
-import { Shield, Server, Globe, Brain, FlaskConical } from "lucide-react"
+import { Shield, Server, Globe, Brain, FlaskConical, Bot } from "lucide-react"
 import type { LucideIcon } from "lucide-react"
 
 export interface Project {
@@ -14,6 +14,29 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    slug: "junior-soc-analyst-ai-agent",
+    title: "Junior SOC Analyst AI Agent",
+    description:
+      "Created a Junior SOC Analyst AI Agent using Airia AI with a custom playbook and a Python script to trigger ICMP packets (ping).",
+    fullDescription:
+      "This project features a Junior SOC Analyst AI Agent developed using Airia AI. It utilizes a custom playbook for automated security operations and includes a Python script designed to trigger and analyze ICMP packets (ping) for network diagnostics and threat simulations. This automated agent rapidly analyzes network patterns and applies automated playbooks for incident response.",
+    techStack: ["Airia AI", "Python", "SOC", "AI Agent", "Playbooks", "Networking"],
+    icon: Bot,
+    github: "https://github.com/jojosony",
+    screenshots: [
+      "/images/projects/soc-agent-1.jpg",
+      "/images/projects/soc-agent-2.jpg",
+      "/images/projects/soc-agent-3.jpg",
+    ],
+    whatILearned: [
+      "Developed an AI Agent using Airia AI for SOC analysis",
+      "Created custom playbooks for automated security incident response",
+      "Wrote Python scripts to generate network traffic (ICMP pings)",
+      "Integrated AI with network security operations for faster detection",
+      "Gained hands-on experience in automated threat detection and response",
+    ],
+  },
   {
     slug: "wazuh-siem-deployment",
     title: "Wazuh SIEM Deployment Lab",
