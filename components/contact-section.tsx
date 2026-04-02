@@ -5,7 +5,8 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Mail, Send, Github, Linkedin, MessageSquare } from "lucide-react"
+import { Mail, Send, Github, Linkedin, MessageSquare, Loader2 } from "lucide-react"
+import { toast } from "sonner"
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -13,11 +14,37 @@ export function ContactSection() {
     email: "",
     message: "",
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    console.log("Form submitted:", formData)
+    setIsSubmitting(true)
+
+    const formUrl = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdpxH9OTditBgdGQlyC7_TYx9aqrDEv6ARA3LFzd0coVgdmbQ/formResponse"
+    
+    const data = new FormData()
+    data.append("entry.2124487501", formData.name)
+    data.append("entry.593189192", formData.email)
+    data.append("entry.2062687766", formData.message)
+
+    try {
+      await fetch(formUrl, {
+        method: "POST",
+        mode: "no-cors",
+        body: data,
+      })
+      toast.success("Message sent successfully!", {
+        description: "Thank you for getting in touch. I'll get back to you soon.",
+      })
+      setFormData({ name: "", email: "", message: "" })
+    } catch (error) {
+      console.error("Error submitting form:", error)
+      toast.error("Failed to send message", {
+        description: "Please try again later or reach out directly via email.",
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -72,10 +99,15 @@ export function ContactSection() {
                   </div>
                   <Button
                     type="submit"
+                    disabled={isSubmitting}
                     className="w-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
                   >
-                    <Send className="mr-2 h-4 w-4" />
-                    Send Message
+                    {isSubmitting ? (
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    ) : (
+                      <Send className="mr-2 h-4 w-4" />
+                    )}
+                    {isSubmitting ? "Sending..." : "Send Message"}
                   </Button>
                 </form>
               </CardContent>
