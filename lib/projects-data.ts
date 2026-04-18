@@ -16,18 +16,18 @@ export interface Project {
 export const projects: Project[] = [
   {
     slug: "junior-soc-analyst-ai-agent",
-    title: "Junior SOC Analyst AI Agent",
+    title: "AI-Powered SOC Triage Analyst — ICMP Flood Detection POC",
     description:
-      "Created a Junior SOC Analyst AI Agent using Airia AI with a custom playbook and a Python script to trigger ICMP packets (ping).",
+      "A Proof of Concept demonstrating enterprise-grade AI-powered threat detection and automated SOC triage using Airia AI (platform) + NanoGPT 5 (agent), triggered by a real-time ICMP flood attack simulation.",
     fullDescription:
-      "This project features a Junior SOC Analyst AI Agent developed using Airia AI. It utilizes a custom playbook for automated security operations and includes a Python script designed to trigger and analyze ICMP packets (ping) for network diagnostics and threat simulations. This automated agent rapidly analyzes network patterns and applies automated playbooks for incident response.",
-    techStack: ["Airia AI", "Python", "SOC", "AI Agent", "Playbooks", "Networking"],
+      "This project simulates a real-world Security Operations Center (SOC) scenario where an attacker machine launches an ICMP ping flood attack and the target machine generates a structured JSON alert upon detection. The alert is sent to an AI SOC Triage Analyst deployed on Airia AI, powered by NanoGPT 5, which follows a professional enterprise SOC playbook to analyze the alert and return a full structured triage report including threat classification, MITRE ATT&CK mapping, risk scoring, and escalation recommendation.",
+    techStack: ["Airia AI", "NanoGPT 5", "Python", "SOC", "AI Agent", "Playbooks"],
     icon: Bot,
-    github: "https://github.com/jojosony",
+    github: "https://github.com/jojosony21/AI-Powered-SOC-Triage-Analyst-ICMP-Flood-Detection-",
     screenshots: [
-      "/images/projects/soc-agent-1.jpg",
-      "/images/projects/soc-agent-2.jpg",
-      "/images/projects/soc-agent-3.jpg",
+      "/images/projects/soc-agent-1.png",
+      "/images/projects/soc-agent-2.png",
+      "/images/projects/soc-agent-3.png",
     ],
     whatILearned: [
       "Developed an AI Agent using Airia AI for SOC analysis",
@@ -39,18 +39,18 @@ export const projects: Project[] = [
   },
   {
     slug: "wazuh-siem-deployment",
-    title: "Wazuh SIEM Deployment Lab",
+    title: "SIEM Deployment & Incident Response Lab (Wazuh)",
     description:
-      "Deployed and configured Wazuh SIEM for security monitoring, log analysis, and threat detection in a virtualized environment.",
+      "Deployed a centralized Security Information and Event Management (SIEM) system to monitor a vulnerable web application, detect malicious activity, and configure active logging using Wazuh.",
     fullDescription:
-      "This project involved setting up a complete Security Information and Event Management (SIEM) solution using Wazuh in a virtualized lab environment. The deployment includes the Wazuh manager, agents on multiple endpoints, and the Kibana dashboard for visualization. The system monitors security events, detects potential threats, and provides comprehensive log analysis capabilities for incident investigation.",
+      "The goal of this project was to deploy a centralized Security Information and Event Management (SIEM) system to monitor a vulnerable web application, detect malicious activity, and configure active logging. I deployed Wazuh as the core SIEM to monitor Apache logs, system authentications, and critical file integrity on a target Linux machine (Zorin OS) from an attacker machine (Kali Linux).",
     techStack: ["Wazuh", "Linux", "Log Analysis", "SIEM", "Elasticsearch", "Kibana"],
     icon: Shield,
-    github: "https://github.com/jojosony",
+    github: "https://github.com/jojosony21/SIEM-Deployment-Incident-Response-Lab-Wazuh-",
     screenshots: [
-      "/images/projects/wazuh-1.jpg",
-      "/images/projects/wazuh-2.jpg",
-      "/images/projects/wazuh-3.jpg",
+      "/images/projects/wazuh-1.png",
+      "/images/projects/wazuh-2.png",
+      "/images/projects/wazuh-3.png",
     ],
     whatILearned: [
       "Configured Wazuh manager and deployed agents across multiple endpoints",
@@ -63,18 +63,18 @@ export const projects: Project[] = [
   },
   {
     slug: "cybersecurity-home-lab",
-    title: "Cybersecurity Home Lab",
+    title: "pfSense Home Lab — Network Attack & Defense",
     description:
-      "Built a comprehensive home lab with pfSense Firewall, VirtualBox, Kali Linux, and Ubuntu for security testing and learning.",
+      "A complete network security home lab using pfSense as firewall/router with antiX Linux as both attacker and defender, virtualized inside VirtualBox on a Kali Linux host machine.",
     fullDescription:
-      "A fully functional cybersecurity lab environment built for hands-on security testing, penetration testing practice, and security tool exploration. The lab features network segmentation using pfSense, multiple virtual machines including Kali Linux for offensive security and Ubuntu servers as target systems, enabling safe and isolated security experimentation.",
-    techStack: ["pfSense", "VirtualBox", "Kali Linux", "Ubuntu", "Networking", "Firewalls"],
+      "A fully functional cybersecurity lab environment built for hands-on security testing, penetration testing practice, and security tool exploration. The lab features network segmentation using pfSense as a firewall/router with antiX Linux configured as both attacker and defender, virtualized inside VirtualBox on a Kali Linux host machine.",
+    techStack: ["pfSense", "VirtualBox", "Kali Linux", "Networking", "Firewalls"],
     icon: Server,
-    github: "https://github.com/jojosony",
+    github: "https://github.com/jojosony21/pfSense-Home-Lab-Attack-Defense-on-VirtualBox",
     screenshots: [
-      "/images/projects/homelab-1.jpg",
-      "/images/projects/homelab-2.jpg",
-      "/images/projects/homelab-3.jpg",
+      "/images/projects/homelab-1.png",
+      "/images/projects/homelab-2.png",
+      "/images/projects/homelab-3.png",
     ],
     whatILearned: [
       "Configured pfSense firewall with multiple network interfaces and VLANs",
@@ -87,18 +87,18 @@ export const projects: Project[] = [
   },
   {
     slug: "web-application-firewall",
-    title: "Web Application Firewall Setup",
+    title: "Web Application Firewall Home Lab — SafeLine WAF",
     description:
-      "Configured SafeLine WAF with Apache and OpenSSL for web application protection and SSL/TLS implementation.",
+      "A hands-on cybersecurity home lab demonstrating Web Application Firewall (WAF) deployment, attack simulation, and defense using SafeLine WAF on Zorin OS, with attack traffic generated from Kali Linux.",
     fullDescription:
-      "This project focused on implementing a Web Application Firewall (WAF) to protect web applications from common attacks. SafeLine WAF was configured alongside Apache web server with proper SSL/TLS certificates using OpenSSL. The setup provides protection against OWASP Top 10 vulnerabilities including SQL injection, XSS, and other web-based attacks.",
-    techStack: ["SafeLine WAF", "Apache", "OpenSSL", "SSL/TLS", "Security", "Linux"],
+      "This project builds a complete, realistic SOC/Blue Team home lab environment that demonstrates hosting a deliberately vulnerable web application (DVWA) behind a WAF, simulating real-world web attacks from Kali Linux (SQL Injection, HTTP Flood), observing SafeLine WAF detect, block, and log each attack in real time, and configuring advanced WAF defenses like rate limiting, access control, custom deny rules, and an authentication gateway.",
+    techStack: ["SafeLine WAF", "Zorin OS", "Kali Linux", "WAF", "Security", "Active Defense"],
     icon: Globe,
-    github: "https://github.com/jojosony",
+    github: "https://github.com/jojosony21/-Web-Application-Firewall-Home-Lab-SafeLine-WAF",
     screenshots: [
-      "/images/projects/waf-1.jpg",
-      "/images/projects/waf-2.jpg",
-      "/images/projects/waf-3.jpg",
+      "/images/projects/waf-1.png",
+      "/images/projects/waf-2.png",
+      "/images/projects/waf-3.png",
     ],
     whatILearned: [
       "Deployed and configured SafeLine WAF for web application protection",
@@ -135,18 +135,18 @@ export const projects: Project[] = [
   },
   {
     slug: "ai-emotion-detection",
-    title: "AI Emotion Detection from Audio",
+    title: "SpeechFix: Speech Emotion & Confidence Analyzer",
     description:
-      "Developed an AI-powered system to detect emotions from audio inputs using machine learning algorithms.",
+      "A deep learning-based web application that analyzes speech signals to detect emotions and assess speaker confidence levels using a CNN-LSTM architecture and Librosa.",
     fullDescription:
-      "A machine learning project that analyzes audio inputs to detect and classify human emotions. The system uses advanced audio processing techniques to extract features like MFCC, pitch, and energy, then applies trained ML models to predict emotions such as happiness, sadness, anger, and fear. This project demonstrates the intersection of AI/ML with practical applications in security and human-computer interaction.",
-    techStack: ["Python", "Machine Learning", "Audio Processing", "AI", "TensorFlow", "Librosa"],
+      "SpeechFix is a deep learning-based web application that analyzes speech signals to detect emotions and assess speaker confidence levels. It helps public speakers, educators, and professionals improve their communication skills through actionable insights. It detects emotions like Happy, Sad, Angry, and Neutral, and rates speaker confidence using a CNN-LSTM architecture and audio feature extraction (MFCC, pitch, tone, energy) with Librosa.",
+    techStack: ["Python", "CNN-LSTM", "Librosa", "React", "Flask", "Machine Learning"],
     icon: Brain,
-    github: "https://github.com/jojosony",
+    github: "https://github.com/jojosony21/SpeechFix_Speech_Emotion_and_Confidence_Analyzer",
     screenshots: [
-      "/images/projects/emotion-1.jpg",
-      "/images/projects/emotion-2.jpg",
-      "/images/projects/emotion-3.jpg",
+      "/images/projects/emotion-1.png",
+      "/images/projects/emotion-2.png",
+      "/images/projects/emotion-3.png",
     ],
     whatILearned: [
       "Extracted audio features using MFCC, spectrograms, and chroma features",
